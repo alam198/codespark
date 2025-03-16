@@ -9,94 +9,103 @@
 </head>
 
 <body>
-  <main>
-    <!-- Hero section -->
-    <div id="hero" class="bg-white dark:bg-gray-900 h-screen">
-      <header class="absolute inset-x-0 top-0 z-50 bg-transparent text-gray-300">
-        <nav class="flex items-center justify-between p-6 lg:px-8   transition-colors duration-300" aria-label="Global">
-          <div class="flex lg:flex-1">
+  <main  class="dark:bg-gray-900">
+    <!-- header section    -->
+    <header class="absolute sticky  inset-x-0 top-0 z-50 text-gray-300">
+      <nav class=" navBAr flex items-center justify-between px-6  lg:px-8  transition-colors duration-300" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-16 w-auto"
+              src="/images/logo1.png" alt="Company Logo">
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button type="button" id="menu-toggle" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 
+                  text-gray-700 dark:text-gray-300 
+                  hover:bg-gray-100 dark:hover:bg-gray-800 
+                  transition-all duration-300">
+            <span class="sr-only">Open menu</span>
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5h16.5M3.75 12h16.5M3.75 19h16.5" />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a href="#"
+            class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-900 text-8xl">Home</a>
+          <a href="#"
+            class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Features</a>
+          <a href="#"
+            class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">About</a>
+          <a href="#"
+            class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Devlopers</a>
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="#"
+            class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">
+            Log in <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div class="lg:hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div id="backdrop" class="fixed inset-0 z-50 hidden"></div>
+        <div id="mobile-menu"
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 transform translate-x-full transition-transform duration-300">
+          <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
-              <img class="h-16 w-auto"
-                src="/images/logo1.png" alt="Company Logo">
+              <img class="h-14 w-auto"
+                src="/images/logo1.png" alt="logo">
             </a>
-          </div>
-          <div class="flex lg:hidden">
-            <button type="button" id="menu-toggle" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 
-                    text-gray-700 dark:text-gray-300 
-                    hover:bg-gray-100 dark:hover:bg-gray-800 
-                    transition-all duration-300">
-              <span class="sr-only">Open menu</span>
+            <button id="menu-close" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
               <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                 aria-hidden="true" data-slot="icon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5h16.5M3.75 12h16.5M3.75 19h16.5" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
-          <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#"
-              class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-900 text-8xl">Home</a>
-            <a href="#"
-              class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Features</a>
-            <a href="#"
-              class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">About</a>
-            <a href="#"
-              class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Devlopers</a>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-200 dark:divide-gray-700">
+              <div class="space-y-2 py-6">
+                  <a href="#"
+                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
+                  <a href="#"
+                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Features</a>
+                  <a href="#"
+                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
+                  <a href="#"
+                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Devloper</a>
+              </div>
+              <div class="py-6">
+                  <a href="#"
+                     class="-mx-3 block rounded-lg px-3 py-2.5 text-black font-semibold text-green-600 dark:text-green-400 hover:bg-green-100 dark:hover:bg-green-700 dark:hover:text-white">
+                     Log in
+                  </a>
+                  <a  href="/apk_file/CodeSpak.apk" download="CodeSpak.apk"
+                   class="-mx-3 block rounded-lg px-3 py-2.5 text-black font-semibold text-green-600 dark:text-green-400 hover:bg-green-100 dark:hover:bg-green-700 dark:hover:text-white">
+                   Download now <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+                  </svg>
+                </a>
+              </div>
           </div>
-          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#"
-              class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">
-              Log in <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
-        </nav>
-
-        <!-- Mobile menu, show/hide based on menu open state. -->
-        <div class="lg:hidden" role="dialog" aria-modal="true">
-          <!-- Background backdrop, show/hide based on slide-over state. -->
-          <div id="backdrop" class="fixed inset-0 z-50 hidden"></div>
-          <div id="mobile-menu"
-            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 transform translate-x-full transition-transform duration-300">
-            <div class="flex items-center justify-between">
-              <a href="#" class="-m-1.5 p-1.5">
-                <span class="sr-only">Your Company</span>
-                <img class="h-14 w-auto"
-                  src="/images/logo1.png" alt="logo">
-              </a>
-              <button id="menu-close" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                <span class="sr-only">Close menu</span>
-                <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                  aria-hidden="true" data-slot="icon">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div class="mt-6 flow-root">
-              <div class="-my-6 divide-y divide-gray-200 dark:divide-gray-700">
-                <div class="space-y-2 py-6">
-                    <a href="#"
-                       class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-base dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
-                    <a href="#"
-                       class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-base dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Features</a>
-                    <a href="#"
-                       class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-base dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
-                    <a href="#"
-                       class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-base dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Devlopers</a>
-                </div>
-                <div class="py-6">
-                    <a href="#"
-                       class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-green-600 dark:text-green-400 hover:bg-green-100 dark:hover:bg-green-700 dark:hover:text-white">
-                       Log in
-                    </a>
-                </div>
-            </div>
-            
-            </div>
+          
           </div>
         </div>
+      </div>
 
 
-      </header>
+    </header>
+    <!-- Hero section -->
+    <div id="hero" class="bg-white dark:bg-gray-900 min-h-screen ">
+      
+    
 
       <div class="relative isolate px-6 pt-14 lg:px-8">
         <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -106,18 +115,21 @@
             style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
           </div>
         </div>
-        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+        <div class="mx-auto max-w-2xl py-22 sm:py-48 lg:py-56">
+          <div class="mb-10 sm:mb-8 sm:flex justify-center">
             <div class="relative rounded-full px-3 py-1 text-sm/6 
                     text-gray-600 dark:text-gray-300 
                     bg-gray-100 dark:bg-gray-800 
                     ring-1 ring-gray-900/10 dark:ring-gray-700 
                     hover:ring-gray-900/20 dark:hover:ring-gray-500 
                     transition-all duration-300">
-              Announcing our next round of funding.
-              <a href="#" class="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
+                    New feature released!
+              <a href="/apk_file/CodeSpak.apk" download="CodeSpak.apk" class="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
                 <span class="absolute inset-0" aria-hidden="true"></span>
-                Read more <span aria-hidden="true">&rarr;</span>
+                Download Now
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+              </svg>
               </a>
             </div>
           </div>
@@ -152,6 +164,7 @@
 
     </div>
 
+    <!-- Features section -->
     <section id="Features" class="bg-white  dark:bg-gray-900">
       <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
             <div class="font-light text-gray-500 sm:text-lg md:text-xl lg:text-2xl dark:text-gray-400">
@@ -239,54 +252,7 @@
 
 
 
-  <script>
-    const troglemanu = () => {
-      // Select elements
-      const menuToggle = document.getElementById('menu-toggle');
-      const menuClose = document.getElementById('menu-close');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const backdrop = document.getElementById('backdrop');
-
-      // Function to open menu
-      function openMenu() {
-        mobileMenu.classList.remove('translate-x-full');
-        backdrop.classList.remove('hidden');
-      }
-
-      // Function to close menu
-      function closeMenu() {
-        mobileMenu.classList.add('translate-x-full');
-        backdrop.classList.add('hidden');
-      }
-
-      // Event listeners
-      menuToggle.addEventListener('click', openMenu);
-      menuClose.addEventListener('click', closeMenu);
-      backdrop.addEventListener('click', closeMenu);
-    }
-    troglemanu();
-
-    const backdrop = () => {
-      const backdrop = document.getElementById('backdrop');
-      const showBackdrop = () => {
-        backdrop.classList.remove('hidden');
-        setTimeout(() => {
-          backdrop.classList.add('opacity-100');
-          backdrop.classList.remove('opacity-0');
-        }, 10); // Slight delay to trigger animation
-      };
-
-      const hideBackdrop = () => {
-        backdrop.classList.remove('opacity-100');
-        backdrop.classList.add('opacity-0');
-        setTimeout(() => {
-          backdrop.classList.add('hidden');
-        }, 300); // Match the `duration-300` value
-      };
-    }  
-    backdrop();
-    
-  </script>
+<script src="index.js" defer></script>
 </body>
 
 </html>
