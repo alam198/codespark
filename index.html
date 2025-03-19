@@ -11,7 +11,7 @@
 <body>
   <main  class="dark:bg-gray-900">
     <!-- header section    -->
-    <header class="absolute sticky  inset-x-0 top-0 z-50 text-gray-300">
+    <header class="absolute sticky bg-white dark:bg-gray-900 inset-x-0 top-0 z-50 text-gray-300">
       <nav class=" navBAr flex items-center justify-between px-6  lg:px-8  transition-colors duration-300" aria-label="Global">
         <div class="flex lg:flex-1">
           <a href="#" class="-m-1.5 p-1.5">
@@ -157,15 +157,41 @@
           </div>
         </div>
       </div>
+      
+      <div class="flex px-20 py-8 lg:px-8 lg:py-12">
 
-      <div>
-        <h1> hellow </h1>
-      </div>
 
+      <model-viewer 
+      src="/images/Phone.glb"
+      alt="3D iPhone Mockup"
+      auto-rotate
+      camera-controls
+      ar
+      style="width: 100%; height: 500px;">
+  </model-viewer>
+  <model-viewer 
+  src="/images/Phone.glb"
+  alt="3D iPhone Mockup"
+  auto-rotate
+  camera-controls
+  ar
+  style="width: 100%; height: 500px;">
+</model-viewer>
+
+<model-viewer 
+src="/images/Phone.glb"
+alt="3D iPhone Mockup"
+auto-rotate
+camera-controls
+ar
+style="width: 100%; height: 500px;">
+</model-viewer>
+  
+    </div>
     </div>
 
     <!-- Features section -->
-    <section id="Features" class="bg-white  dark:bg-gray-900">
+    <section id="Features" class="bg-white min-h-screen dark:bg-gray-900">
       <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
             <div class="font-light text-gray-500 sm:text-lg md:text-xl lg:text-2xl dark:text-gray-400">
               <h2 class="mb-10 text-4xl md:text-5xl lg:text-8xl tracking-tight font-extrabold text-gray-900 dark:text-white">We didn't reinvent the wheel</h2>
@@ -251,6 +277,8 @@
   </main>
 
 
+  <script type="module" src="https://unpkg.com/@google/model-viewer@3.2.0/dist/model-viewer.min.js">
+</script>
 
 <script src="index.js" defer></script>
 </body>
