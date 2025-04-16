@@ -1,0 +1,98 @@
+html, body {
+    background-color: #111827; /* dark mode background */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .splash {
+    position: fixed;
+    inset: 0;
+    background:#182236;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: slideIn 0.8s ease forwards;
+  }
+
+  .splash-content {
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeScaleIn 1s ease 0.8s forwards;
+  }
+
+  .splash h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  .splash p {
+    font-size: 1.2rem;
+  }
+
+  .splash.hide {
+    animation: fadeSlideOut 1s ease forwards;
+  }
+
+  @keyframes slideIn {
+    from { top: -100%; }
+    to { top: 0; }
+  }
+
+  @keyframes fadeScaleIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeSlideOut {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+  }
+
+  main {
+    display: none;
+    opacity: 0;
+    background-color: #111827;
+    color: white;
+    min-height: 100vh;
+    transition: opacity 0.8s ease;
+  }
+
+  main.show {
+    display: block;
+    opacity: 1;
+  }
+
+
+
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    transition: background-color 0.4s ease;
+    z-index: 1000;
+  }
+  
+
+
+
+
+  

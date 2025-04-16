@@ -1,3 +1,23 @@
+const  Splash_Screen = () => {
+  const splash = document.getElementById('splash');
+  const main = document.getElementById('mainContent');
+
+  setTimeout(() => {
+    splash.classList.add('hide');
+
+    setTimeout(() => {
+      splash.style.display = 'none';
+      main.classList.add('show');
+      document.body.style.overflow = 'auto';
+    }, 1000); // match fadeSlideOut duration
+  }, 3500); // splash duration
+
+
+  }
+
+  Splash_Screen();
+
+
 const troglemanu = () => {
     // Select elements
     const menuToggle = document.getElementById('menu-toggle');
@@ -25,26 +45,23 @@ const troglemanu = () => {
 
   troglemanu();
 
-const navbar = () => {
-    const header = document.getElementById('header');
-    header.classList.add('backdrop-Color:red', 'backdrop-blur-md');
+ 
+const headerColorChange = () => {
+  const header = document.getElementById('header');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY >= 50) {
+      console.log('scrolled');
+      header.style.backgroundColor = 'red';
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+};
+headerColorChange();
 
 
 
 
-    // document.addEventListener('DOMContentLoaded', () => {
-    //     const header = document.getElementById('header');
-    //     const navbar = document.querySelector('.navbar');
-    
-    //     window.addEventListener('scroll', () => {
-    //         console.log(window.scrollY);
-    //         if (window.scrollY > 287) {
-    //             header.classList.add('bg-gray-900', 'shadow-lg');
-                
-    //         }
-    //     });
-    // });
-    
-  }
 
- navbar();
+
