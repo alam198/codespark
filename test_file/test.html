@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+   <!-- Splash Screen -->
+   <div class="splash" id="splash">
+    <div class="splash-content">
+      <h1>🚀 Launching EduApp</h1>
+      <p>Smart learning made simple</p>
+    </div>
+  </div> 
+
+
+  <main  class="dark:bg-gray-900" id="mainContent">
+    <!-- header section    -->
+    <header id="header" class="sticky top-0 z-50 inset-x-0 text-gray-300 bg-transparent dark:bg-transparent transition-bg">
+      <nav class=" navBAr flex items-center justify-between px-6  lg:px-8  transition-colors duration-300" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-16 w-auto"
+              src="/images/logo1.png" alt="Company Logo">
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button type="button" id="menu-toggle" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 
+                  text-gray-700 dark:text-gray-300 
+                  hover:bg-gray-100 dark:hover:bg-gray-800 
+                  transition-all duration-300">
+            <span class="sr-only">Open menu</span>
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5h16.5M3.75 12h16.5M3.75 19h16.5" />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a href="#"
+            class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-900 text-8xl">Home</a>
+          <a href="#"
+            class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Features</a>
+          <a href="#"
+            class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">About</a>
+          <a href="#"
+            class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Devlopers</a>
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="#"
+            class="text-sm/6 font-semibold text-gray-900 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">
+            Log in <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div class="lg:hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div id="backdrop" class="fixed inset-0 z-50 hidden"></div>
+        <div id="mobile-menu"
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 transform translate-x-full transition-transform duration-300">
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
+              <img class="h-14 w-auto"
+                src="/images/logo1.png" alt="logo">
+            </a>
+            <button id="menu-close" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-200 dark:divide-gray-700">
+              <div class="space-y-2 py-6">
+                  <a href="#"
+                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
+                  <a href="#"
+                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Features</a>
+                  <a href="#"
+                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
+                  <a href="#"
+                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Devloper</a>
+              </div>
+              <div class="py-6">
+                  <a href="#"
+                     class="-mx-3 block rounded-lg px-3 py-2.5 text-black font-semibold text-green-600 dark:text-green-400 hover:bg-green-100 dark:hover:bg-green-700 dark:hover:text-white">
+                     Log in
+                  </a>
+                  <a  href="/apk_file/CodeSpak.apk" download="CodeSpak.apk"
+                   class="-mx-3 block rounded-lg px-3 py-2.5 text-black font-semibold text-green-600 dark:text-green-400 hover:bg-green-100 dark:hover:bg-green-700 dark:hover:text-white">
+                   Download now <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+                  </svg>
+                </a>
+              </div>
+          </div>
+          
+          </div>
+        </div>
+      </div>
+
+
+    </header>
+    <!-- Hero section -->
+    <div id="hero" class="bg-white dark:bg-gray-900 min-h-screen ">
+      
+    
+
+      <div class="relative isolate px-6 pt-14 lg:px-8">
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          aria-hidden="true">
+          <div
+            class="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+          </div>
+        </div>
+        <div class="mx-auto max-w-2xl py-22 sm:py-48 lg:py-56">
+          <div class="mb-10 sm:mb-8 sm:flex justify-center">
+            <div class="flex justify-center items-center px-4 py-6">
+              <div class="relative rounded-full px-4 py-2 text-sm
+                          text-gray-600 dark:text-gray-300
+                          bg-gray-100 dark:bg-gray-800
+                          ring-1 ring-gray-900/10 dark:ring-gray-700
+                          hover:ring-gray-900/20 dark:hover:ring-gray-500
+                          transition-all duration-300 text-center max-w-full sm:max-w-fit">
+                
+                New feature released!
+                
+                <a href="/apk_file/CodeSpak.apk" download="CodeSpak.apk"
+                   class="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline inline-flex items-center ml-2">
+                  Download Now
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <h1 class="text-5xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-7xl">Data to enrich
+              your online business</h1>
+            <p class="mt-8 text-lg font-medium text-gray-400 sm:text-xl/8">Anim aute id magna aliqua ad ad non deserunt
+              sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.</p>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+              <a href="#"
+                class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400">Get
+                started</a>
+              <a href="#" class="text-sm/6 font-semibold text-indigo-400">Learn more <span
+                  aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+          aria-hidden="true">
+          <div
+            class="relative left-[calc(50%+3rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+          </div>
+        </div>
+      </div>
+      
+      <div class="flex px-20 py-8 lg:px-8 lg:py-12">
+
+
+      <model-viewer 
+      src="/images/Phone.glb"
+      alt="3D iPhone Mockup"
+      auto-rotate
+      camera-controls
+      ar
+      style="width: 100%; height: 500px;">
+  </model-viewer>
+  <model-viewer 
+  src="/images/Phone.glb"
+  alt="3D iPhone Mockup"
+  auto-rotate
+  camera-controls
+  ar
+  style="width: 100%; height: 500px;">
+</model-viewer>
+
+<model-viewer 
+src="/images/Phone.glb"
+alt="3D iPhone Mockup"
+auto-rotate
+camera-controls
+ar
+style="width: 100%; height: 500px;">
+</model-viewer>
+  
+    </div>
+    </div>
+
+    <!-- Features section -->
+    <section id="Features" class="bg-white min-h-screen dark:bg-gray-900">
+      <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+            <div class="font-light text-gray-500 sm:text-lg md:text-xl lg:text-2xl dark:text-gray-400">
+              <h2 class="mb-10 text-4xl md:text-5xl lg:text-8xl tracking-tight font-extrabold text-gray-900 dark:text-white">We didn't reinvent the wheel</h2>
+              <p class="mb-4 text-lg md:text-xl lg:text-2xl">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
+              <p class="mb-10 text-lg md:text-xl lg:text-2xl">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p>
+            </div>
+          <div class="grid grid-cols-2 gap-4 mt-8">
+              <img class="w-full rounded-lg" src="./images/sineup.jpeg" alt="office content 1">
+              <img class="mt-4 w-full lg:mt-10 rounded-lg" src="./images/login.jpeg" alt="office content 2">
+          </div>
+      </div>
+  </section>
+   
+
+
+  <div class="bg-gray-50 dark:bg-gray-900 py-24 sm:py-32">
+    <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+      <h2 class="text-center text-base font-semibold text-indigo-600">New Features</h2>
+      <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+        Tools to Empower Every Coder
+      </p>
+  
+      <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+  
+        <!-- Online Compiler -->
+        <!-- Online Compiler -->
+      <div class="relative lg:row-span-2">
+        <div class="absolute inset-px rounded-lg bg-white dark:bg-gray-800 lg:rounded-l-[2rem]"></div>
+        <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
+          <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+            <p class="text-lg font-medium text-gray-900 dark:text-white max-lg:text-center">Built-in Code Compiler</p>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300 max-lg:text-center">
+              Practice coding in real-time with our fast, secure, and multi-language online compiler – anytime, anywhere.
+            </p>
+          </div>
+          <div class="flex justify-center items-center py-6 lg:py-15 px-4">
+            <!-- Phone Frame -->
+            <div class="relative w-[200px] h-[400px] lg:h-[600px] lg:w-[300px] bg-gray-900 rounded-[2.5rem] border-[8px] border-gray-600 shadow-[0_0_0_4px_rgba(0,0,0,0.8)] overflow-hidden">
+              <!-- Camera Dot and Speaker -->
+              <div class="absolute top-1 left-1/2 z-100  -translate-x-1/2 flex items-center space-x-2">
+                <div class="w-2 h-2 bg-red-700  rounded-full"></div>
+                <div class="w-10 h-1 bg-gray-600 rounded-full"></div>
+              </div>
+
+              <!-- Phone Screen -->
+              <div id="phoneScreen" class="absolute inset-0 bg-[url('./images/home_page.jpeg')] bg-cover  bg-center bg-no-repeat pt-6 pb-10 px-2  flex flex-col justify-between">
+                <!-- Content -->
+                <!-- <div class="bg-gray-100">
+                  <h2 class="text-center text-sm font-semibold text-gray-900 dark:text-white">CodeSpak App</h2>
+                  <p class="text-center text-xs text-gray-500 dark:text-gray-300">Your coding assistant.</p>
+                </div> -->
+
+                <!-- Bottom Navigation Bar -->
+                <nav class="absolute bottom-0 left-0 right-0 bg-gray-900 dark:bg-gray-900 border-t border-gray-300 dark:border-gray-600 px-5 py-1 flex justify-between rounded-b-[2rem]">
+                    <a href="#" data-bg="./images/home_page.jpeg" class="nav-btn flex flex-col items-center lg:text-[10px] text-[7px] text-gray-200">
+                    <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path d="M3 12l9-9 9 9M4 10v10h6v-6h4v6h6V10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Home
+                  </a>
+                  <a href="#" data-bg="./images/course_detail_page.jpeg" class="nav-btn flex flex-col items-center lg:text-[10px] text-[7px] text-gray-200">
+                    <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 14l9-5-9-5-9 5 9 5zm0 7v-6m0 0L3 9m9 5l9-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Courses
+                  </a>
+                  <a href="#" data-bg="./images/ai_chat.jpeg" class="nav-btn flex flex-col items-center lg:text-[10px] text-[7px] text-gray-200">
+                    <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    AI
+                  </a>
+                  <a href="#" data-bg="./images/profile_page.jpeg" class="nav-btn flex flex-col items-center lg:text-[10px] text-[7px] text-gray-200">
+                    <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path d="M5.121 17.804A13.937 13.937 0 0112 15c2.465 0 4.758.703 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Profile
+                  </a>
+                  <a href="#" data-bg="./images/compiler.jpeg" class="nav-btn flex flex-col items-center lg:text-[10px] text-[7px] text-gray-200">
+                    <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path d="M9.75 9.75v4.5m4.5-4.5v4.5M5.25 5.25h13.5v13.5H5.25z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Compiler
+                  </a>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 lg:rounded-l-[2rem]"></div>
+      </div>
+        <!-- AI Assistant -->
+        <div class="relative max-lg:row-start-1">
+          <div class="absolute inset-px rounded-lg bg-white dark:bg-gray-800 max-lg:rounded-t-[2rem]"></div>
+          <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
+            <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+              <p class="text-lg font-medium text-gray-900 dark:text-white max-lg:text-center">AI-Powered Assistant</p>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-300 max-lg:text-center">Ask questions, get hints, debug code — our AI assistant supports you like a real tutor 24/7.</p>
+            </div>
+            <div class="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
+              <img class="w-full max-lg:max-w-xs lg:h-64 rounded-[15px]" src="./images/ai_chat_ratio.png" alt="AI Assistant">
+            </div>
+          </div>
+          <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 max-lg:rounded-t-[2rem]"></div>
+        </div>
+  
+        <!-- Live Code Examples -->
+        <div class="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
+          <div class="absolute inset-px rounded-lg bg-white dark:bg-gray-800"></div>
+          <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+            <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+              <p class="text-lg font-medium text-gray-900 dark:text-white max-lg:text-center">Live Code Examples</p>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-300 max-lg:text-center">Explore hundreds of interactive examples with syntax highlighting and instant preview support.</p>
+            </div>
+            <div class="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
+              <img class="w-full max-lg:max-w-xs lg:h-64 rounded-[15px]" src="./images/compiler_in_radio.png" alt="Live Code">
+            </div>
+          </div>
+          <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5"></div>
+        </div>
+  
+        <!-- Course Tracking -->
+        <div class="relative lg:row-span-2">
+          <div class="absolute inset-px rounded-lg bg-white dark:bg-gray-800 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
+          <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
+            <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+              <p class="text-lg font-medium text-gray-900 dark:text-white max-lg:text-center">Smart Course Tracking</p>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-300 max-lg:text-center">Track your progress, unlock levels, and earn certificates as you grow your coding skills.</p>
+            </div>
+            <div class="relative min-h-[30rem] w-full grow">
+              <div class="absolute top-10 right-0 bottom-0 left-10 overflow-hidden rounded-tl-xl bg-gray-900 shadow-2xl">
+                <div class="flex bg-gray-800/40 ring-1 ring-white/5">
+                  <!-- <div class="-mb-px flex text-sm font-medium text-gray-400">
+                    <div class="border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white">tracker.js</div>
+                    <div class="border-r border-gray-600/10 px-4 py-2">progress.js</div>
+                  </div> -->
+                  
+                </div>
+                <div class="px-6 pt-6 pb-14 text-white text-sm font-mono">
+              
+                <img class="w-full h-full object-cover rounded-tl-xl" src="./images/progress.jpeg" alt="Course Tracking">
+                
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  
+  
+
+
+    <!-- Footer section -->
+    <footer class="bg-gray-900 dark:bg-gray-800 text-gray-300">
+      <div class="px-6 py-12 lg:px-8">
+        <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <a href="#" class="block mb-6">
+              <span class="sr-only">Your Company</span>
+              <img class="h-14 w-auto
+                      filter invert(100%)
+                      " src="/images/logo1.png" alt="logo">
+            </a>
+            <p class="text-sm/6 text-gray-400">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
+              cupidatat commodo. Elit sunt amet fugiat veniam occaecat.</p>
+          </div>
+          <div>
+            <h2 class="text-sm/6 font-semibold text-gray-300">Product</h2>
+            <ul class="mt-6 space-y-2">
+              <li><a href="#"
+                  class="text-sm/6 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Features</a>
+              </li>
+              <li><a href="#"
+                  class="text-sm/6 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Marketplace</a>
+              </li>
+              <li><a href="#"
+                  class="text-sm/6 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Company</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-sm/6 font-semibold text-gray-300">Company</h2>
+            <ul class="mt-6 space-y-2">
+              <li><a href="#"
+                  class="text-sm/6 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">About
+                  us</a></li>
+              <li><a href="#"
+                  class="text-sm/6 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Careers</a>
+              </li>
+              <li><a href="#"
+                  class="text-sm/6 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Press</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-sm/6 font-semibold text-gray-300">Resources</h2>
+            <ul class="mt-6 space-y-2">
+              <li><a href="#"
+                  class="text-sm/6 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Documentation</a>
+              </li>
+              <li><a href="#"
+                  class="text-sm/6 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Community</a>
+              </li>
+              <li><a href="#"
+                  class="text-sm/6 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Guides</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 dark:border-gray-700">
+        <div class="px-6 py-6 lg:px-8">
+          <p class="text-sm/6 text-gray-400">© 2021 Your Company. All rights reserved.</p>
+        </div>
+      </div>
+      
+
+    </footer>
+  </main>
+
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer@3.2.0/dist/model-viewer.min.js">
+</script>
+
+<script src="index.js" defer></script>
+</body>
+
+</html>

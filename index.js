@@ -61,7 +61,17 @@ const headerColorChange = () => {
 headerColorChange();
 
 
-
+document.querySelectorAll('.nav-btn').forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    const bgUrl = this.getAttribute('data-bg');
+    const phoneScreen = document.getElementById('phoneScreen');
+    
+    // Animate with fade for smooth transition
+    phoneScreen.style.transition = 'background-image 0.5s ease-in-out';
+    phoneScreen.style.backgroundImage = `url('${bgUrl}')`;
+  });
+});
 
 
 
